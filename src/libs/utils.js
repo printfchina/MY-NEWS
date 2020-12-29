@@ -28,7 +28,7 @@ function scrollToBottom (callback) {
     callback();
   }
 }
-
+// 拿到列表div
 function getItemNode (target) {
   while (target = target.parentNode) {
     if (target.className.split(' ')[0] === 'news-item') {
@@ -36,7 +36,7 @@ function getItemNode (target) {
     }
   }
 }
-
+// 获取url  正则表达式
 function getUrlQueryValue (key) {
   const reg = new RegExp('(^|&)' + key + '=([^&]*)(&|$)', 'i');
   const res = window.location.search.substr(1).match(reg);

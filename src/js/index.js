@@ -43,6 +43,7 @@ import { scrollToBottom } from '../libs/utils';
     }
     function bindEvent () {
         NavBar.bindEvent(setType);
+        NewsList.bindEvent(oListWrapper, setCurrentNews);
         window.addEventListener('scroll', scrollToBottom.bind(null, getMoreList, false));
     }
 // 渲染 头部  导航  列表
@@ -112,10 +113,11 @@ import { scrollToBottom } from '../libs/utils';
               }, 1000)
           }
       }
-
-      setTimeout(() => {
-          config.isLoading = false
-      },3000)
+    }
+    function setCurrentNews(options){
+        const { idx, pageNum } = options;
+        const currentNews = newsData[config.type][pageNum][idx];
+        localStorage.setItem('currentNews', JSON.stringify(currentNews))
     }
 
     init()
