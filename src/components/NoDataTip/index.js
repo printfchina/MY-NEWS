@@ -1,5 +1,6 @@
-import tpl  from './index.tpl'
-import { tplReplace } from '../../libs/utils'
+import tpl  from './index.tpl';
+import './index.scss';
+import { tplReplace } from '../../libs/utils';
 
 
 export default {
